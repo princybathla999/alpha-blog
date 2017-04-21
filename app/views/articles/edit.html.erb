@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-  <header>CREATE NEW ARTICLE</header>
+  <header>EDIT EXISTING ARTICLE</header>
   <% if @article.errors.any? %>
 
       <h2>The following errors prevented the article from getting created</h2>
@@ -41,6 +41,8 @@
         </p>
     <% end %>
   </div>
+<%= link_to 'Back to articles', articles_path %>
+
 </div>
 </body>
 </html>
