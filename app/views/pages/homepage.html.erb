@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Homepage</title>
-</head>
-<body>
-<div class="container">
-  <header>WELOME TO PAGES WORLD</header>
-  <div class="flex-container ">
-    <p>This alpha blog post contains articles. Articles contain information about title of article and description of articles. </p>
-  </div>
-  <aside>
-    <%= link_to 'Articles', articles_path %> |
-    <%= link_to 'About', about_path   %></aside>
+<div class="jumbotron center ">
+  <h1>WELCOME TO ALPHA BLOG</h1>
+  <%=link_to "SIGN UP", articles_path ,class: "btn btn-primary btn-lg btn-xlarge"  %>
 </div>
-</body>
-</html>
