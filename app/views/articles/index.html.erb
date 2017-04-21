@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>WELCOME TO MY PRACTICE WORLD</title>
-  <link rel = "stylesheet"
-        type = "text/css"
-        href = "commonstyle.css" />
-  </head>
+</head>
 <body>
 <div class="container">
   <header> LIST OF ARTICLES</header>
@@ -26,6 +23,7 @@
        <td><%=article.updated_at %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Delete', article_path(article), method: :delete,data: {confirm: "Are you sure you want to delete #{article.title }?"}   %></td>
     </tr>
       <% end %>
     </table>

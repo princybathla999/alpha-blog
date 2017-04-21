@@ -2,61 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>WELCOME TO MY PRACTICE WORLD</title>
-  <style>
-    div.container {
-      width: 99%;
-      border: 5px solid gray;
-    }
-    .flex-container {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-flow: row wrap;
-      flex-flow: row wrap;
-      text-align: center;
-    }
-
-    article {
-      margin-left: 170px;
-      border-left: 1px solid gray;
-      padding: 1em;
-      overflow: hidden;
-    }
-
-    header {
-      background: #bdb;
-      color: BLACK;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      text-align: center;
-      font-size: 20pt ;
-    }
-
-    footer {
-      background: #bdb;
-      color: black;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      margin-top: 300px;
-      text-align: center;
-      font-size: 16pt ;
-    }
-  </style>
+  <title>Homepage</title>
 </head>
 <body>
 <div class="container">
   <header>WELOME TO PAGES WORLD</header>
   <div class="flex-container ">
-
-    <p>I am looking for job opportunities in Ruby on Rails. <br>
-      The more I work, the more I get encouraged to follow the
-      same path. I want to do something big in Ruby on Rails.<br>
-      I know hardwork always pays off, thats why keeping my patience to get successful one day. </p>
+    <p>This alpha blog post contains articles. Articles contain information about title of article and description of articles. </p>
   </div>
-  <article> I am looking for something demanding and technically challenging so that I can enhance my learning skills</article>
   <aside>
+    <%= link_to 'Articles', articles_path %> |
     <%= link_to 'About', about_path   %></aside>
 </div>
-<footer> I AM IN THE FOOTER OF HTML WORLD</footer>
 </body>
 </html>

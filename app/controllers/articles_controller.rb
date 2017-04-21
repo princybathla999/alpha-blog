@@ -27,17 +27,20 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id] )
-if @article.update_attributes(article_params )
-  flash[:notice]= "Article was successfully created"
-  redirect_to article_path(@article)
-
-else
-  render 'edit'
-end
+    if @article.update_attributes(article_params )
+    flash[:notice]= "Article was successfully created"
+    redirect_to article_path(@article)
+    else
+    render 'edit'
+    end
   end
 
   def destroy
-
+    @article = Article.find(params[:id] )
+    if @article.destroy
+    flash[:notice ]= "#{@article.title } is successfully deleted."
+      redirect_to articles_path
+    end
   end
   private
   def article_params
