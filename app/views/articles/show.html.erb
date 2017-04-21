@@ -45,10 +45,8 @@
 </head>
 <body>
 <div class="container">
-  <header>CREATE NEW ARTICLE</header>
+  <header> ARTICLE</header>
   <% if @article.errors.any? %>
-
-      <h2>The following errors prevented the article from getting created</h2>
 
       <ul>
 
@@ -62,20 +60,20 @@
 
   <% end %>
   <div class="flex-container ">
-    <%= form_for @article do |f| %>
 
-        <p>
-          <%= f.label :title %></br>
-          <%= f.text_field :title %>
-        </p>
-        <p>
-          <%= f.label :description %></br>
-          <%= f.text_area :description %>
-        </p>
-        <p>
-          <%= f.submit  %>
-        </p>
-    <% end %>
+    <p>
+
+      Title:
+      <%= @article.title %>
+    </p>
+    </br>
+  </div>
+
+  <div class="flex-container ">
+    <p>
+      Description:
+      <%= @article.description %>
+    </p>
   </div>
 </div>
 <footer> I AM IN THE FOOTER OF HTML WORLD</footer>
