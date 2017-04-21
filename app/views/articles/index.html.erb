@@ -8,7 +8,8 @@
 <div class="container">
   <header> LIST OF ARTICLES</header>
   <%= link_to 'Create New Article', new_article_path %>
-    <table>
+  <%if @articles.any?  %>
+  <table>
     <tr>
     <th>TITLE</th>
     <th>DESCRIPTION</th>
@@ -27,6 +28,7 @@
     </tr>
       <% end %>
     </table>
-</div>
+   <% end %>
+      </div>
 </body>
 </html>
