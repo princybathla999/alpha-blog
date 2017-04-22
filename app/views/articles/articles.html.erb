@@ -2,9 +2,6 @@
 
 <div class="well col-xs-8 col-xs-offset-2">
 
-  <h4 class="center description"><strong>Description:</strong></h4>
-
-  <hr>
   <% if @article.user %>
 
       <ul class="listing">
@@ -36,6 +33,11 @@
       </ul>
 
   <% end %>
+
+  <h4 class="center description"><strong>Description:</strong></h4>
+
+  <hr>
+
   <%= simple_format(@article.description) %>
 
   <div class="article-actions">
