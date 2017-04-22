@@ -25,6 +25,7 @@ before_action :set_article, only: [:edit,:update,:show, :destroy]
   end
 
   def update
+    @article.user = User.first
     if @article.update_attributes(article_params )
     flash[:success]= "Article was successfully created"
     redirect_to article_path(@article)
