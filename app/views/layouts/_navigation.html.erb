@@ -14,12 +14,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'ARTICLES', articles_path %></li>
-        <li><a href="#">Link</a></li>
+        <li><%= link_to 'ARTICLES', articles_path ,  id: "titles" %></li>
+        <li><%= link_to 'USERS', users_path , id: "titles" %></li>
+        <% if logged_in? %>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> ACTIONS <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to 'NEW ARTICLE', new_article_path  %></li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="titles"> ACTIONS <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="dropdown-bg">
+            <li><%= link_to 'NEW ARTICLE', new_article_path ,id: "dropdown-bg"  %></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
@@ -28,6 +29,7 @@
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
+            <% end %>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -36,15 +38,20 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+        <% if logged_in? %>
+         <li><%= link_to 'Log out', logout_path, method: :delete,id:"titles" %></li>
+        <li class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="titles">Your Profile <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to 'Edit Your Profile', edit_user_path(current_user) ,id: "dropdown-bg" %></li>
+            <li><%= link_to 'View Your Profile', user_path(current_user) ,id: "dropdown-bg" %></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
+           <% else %>
+            <li><%= link_to 'Log In', login_path,id:"titles" %></li>
+            <li><%= link_to 'Sign Up', signup_path, id:"titles" %></li>
+
+      <% end %>
           </ul>
         </li>
       </ul>
