@@ -11,7 +11,7 @@ def index
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.save
     flash[:success]= "Article was successfully created"
     redirect_to article_path(@article)
@@ -27,7 +27,6 @@ def index
   end
 
   def update
-    @article.user = User.first
     if @article.update_attributes(article_params )
     flash[:success]= "Article was successfully created"
     redirect_to article_path(@article)
