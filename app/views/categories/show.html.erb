@@ -1,13 +1,10 @@
-<h1 align="center">Welcome to <%= @category.name %>'s page</h1>
+<h1 align="center"><%= "Category:" +@category.name%></h1>
+<div align="center">
+  <%= will_paginate  @category_articles %>
+</div>
 
-<div class="row">
+<%= render 'articles/article', obj: @category_articles %>
 
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="well well-lg">
-      <div class="article-body">
-
-        <%= @category.name %>
-      </div>
-    </div>
-  </div>
+<div align="center">
+  <%= will_paginate  @category_articles %>
 </div>
